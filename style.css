@@ -201,3 +201,37 @@ input[type="checkbox"]:checked + .slider:before {
 .dark-mode-switch label {
   margin-top: 8px;
 }
+
+.cv-slider {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+  width: 100%;
+}
+
+.cv-slider .slide:first-child {
+  display: block;
+}
+
+.cv-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+#downloadPdf {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
