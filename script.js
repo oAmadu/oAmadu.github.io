@@ -8,7 +8,7 @@ const CV_CONTENT = {
   0: `I am an enthusiastic and adaptable computer engineering fresh graduate...`,
   1: () => window.location.href = 'mailto:aymt7mi@gmail.com',
   2: `Phone: +966538024619\nOther contact info`,
-  3: `<style> iframe.pdf-viewer { border: none; display: block; width: fit-content; height: fit-content;}</style><iframe class="pdf-viewer" src="media/cv1.pdf"</iframe>`,
+  3: ``,
   4: () => window.open('https://github.com/oAmadu'),
   5: () => window.open('https://www.linkedin.com/in/aymt7mi/')
 };
@@ -28,4 +28,33 @@ boxes.forEach((box, index) => {
     }
   });
 });
-// test comment
+
+const slides = document.querySelectorAll('.slide');
+let currentSlide = 0;
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.style.display = i === index ? 'block' : 'none';
+  });
+}
+
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}
+
+function previousSlide() {
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  showSlide(currentSlide);
+}
+
+document.getElementById('nextSlide').addEventListener('click', nextSlide);
+document.getElementById('prevSlide').addEventListener('click', previousSlide);
+
+document.getElementById('downloadPdf').addEventListener('click', () => {
+  const pdfUrls = ['media/cv1.pdf', 'media/cv12.pdf'];
+  window.open(pdfUrls[currentSlide], '_blank');
+});
+
+// Initialize first slide
+showSlide(currentSlide);
