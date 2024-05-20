@@ -16,7 +16,14 @@ const CV_CONTENT = {
   0: `I am an enthusiastic and adaptable computer engineering fresh graduate...`,
   1: () => window.location.href = 'mailto:aymt7mi@gmail.com',
   2: `Phone: +966538024619\nOther contact info`,
-  3: ``,
+  3: `      <img src="media/cvs/CV1.jpg" alt="CV Page 1" class="slide">
+  <img src="media/cvs/CV12.jpg" alt="CV Page 12" class="slide">
+</div>
+<div class="cv-controls">
+  <button id="prevSlide">Previous</button>
+  <button id="nextSlide">Next</button>
+</div>
+<button id="downloadPdf">Download PDF</button>`,
   4: () => window.open('https://github.com/oAmadu'),
   5: () => window.open('https://www.linkedin.com/in/aymt7mi/')
 };
