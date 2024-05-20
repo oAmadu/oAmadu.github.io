@@ -7,71 +7,52 @@
   <title>Aymt7mi.</title>
   <link rel="stylesheet" href="style.css"> 
 </head>
-<body>
+<body class="dark-mode">
   
-  <div class="dock">
-    <div class="dark-mode-switch">
-      <label class="switch">
-        <input type="checkbox" id="darkModeToggle">
-        <span class="slider round"></span>
-      </label>
-      <label for="darkModeToggle">Dark Mode</label>
+  <div class="container">
+    <div class="box" onclick="window.location.href='profile.html'">
+      <div class="item">
+        <img src="media/svg/me.svg" alt="me">
+        <span class="icon-name">Profile</span>
+      </div>
     </div>
-    <div class="container">
-      <div class="box">
-        <div class="item">
-          <img src="media/svg/me.svg" alt="me">
-          <span class="icon-name">Profile</span>
-        </div>
+    <div class="box" onclick="window.location.href='mailto:aymt7mi@gmail.com'">
+      <div class="item">
+        <img src="media/svg/gmail.svg" alt="Gmail">
+        <span class="icon-name">Gmail</span>
       </div>
-      <div class="box">
-        <div class="item">
-          <img src="media/svg/gmail.svg" alt="Gmail">
-          <span class="icon-name">Gmail</span>
-          </div>
-        </div>
-      <div class="box">
-        <div class="item">
-          <img src="media/svg/contacts.svg" alt="contacts">
-          <span class="icon-name">Contacts</span>
-        </div>
+    </div>
+    <div class="box" onclick="window.location.href='contacts.html'">
+      <div class="item">
+        <img src="media/svg/contacts.svg" alt="contacts">
+        <span class="icon-name">Contacts</span>
       </div>
-      <div class="box">
-        <div class="item">
-          <img src="media/svg/doc.svg" alt="doc">
-          <span class="icon-name">CV</span>
-        </div>
+    </div>
+    <div class="box" onclick="window.location.href='media/cvs/CV1.pdf'">
+      <div class="item">
+        <img src="media/svg/doc.svg" alt="doc">
+        <span class="icon-name">CV</span>
       </div>
-      <div class="box">
-        <div class="item">
-          <img src="media/svg/github.svg" alt="github">
-          <span class="icon-name">Github</span>
-        </div>
+    </div>
+    <div class="box" onclick="window.open('https://github.com/oAmadu')">
+      <div class="item">
+        <img src="media/svg/github.svg" alt="github">
+        <span class="icon-name">Github</span>
       </div>
-      <div class="box">
-        <div class="item">
-          <img src="media/svg/linkedin.svg" alt="linkedin">
-          <span class="icon-name">LinkedIn</span>
-        </div>
+    </div>
+    <div class="box" onclick="window.open('https://www.linkedin.com/in/aymt7mi/')">
+      <div class="item">
+        <img src="media/svg/linkedin.svg" alt="linkedin">
+        <span class="icon-name">LinkedIn</span>
       </div>
-      <div class="box">
-        <div class="item">
-          <img src="media/svg/about.svg" alt="about">
-          <span class="icon-name">About</span>
-        </div>
+    </div>
+    <div class="box" onclick="window.location.href='about.html'">
+      <div class="item">
+        <img src="media/svg/about.svg" alt="about">
+        <span class="icon-name">About</span>
       </div>
     </div>
   </div>
-
-  <div class="cv-showcase">
-    <div class="cv-slider">
-
-    <div class="cv-content">
-      <!-- CV content will be displayed here -->
-    </div>
-  </div>
-  
-  
 
   <script src="script.js"></script> 
 </body>
