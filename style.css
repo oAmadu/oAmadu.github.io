@@ -56,14 +56,16 @@ body, html {
 
 .container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   gap: 10px; /* Adjust spacing between items */
   flex-wrap: nowrap; /* Prevent wrapping */
+  width: 100%;
 }
 
 .box {
-  flex: 0 0 14%; /* Default width for larger screens */
-  max-width: 14%;
+  flex: 1 1 auto;
+  max-width: 100%;
+  min-width: 0;
   box-sizing: border-box;
   text-align: center;
   transition: all 0.3s ease; /* Smooth transition */
@@ -205,15 +207,15 @@ input[type="checkbox"]:checked + .slider:before {
 
 @media (max-width: 1024px) {
   .box {
-      flex: 0 0 20%; /* Adjust width for medium screens */
-      max-width: 20%;
+      flex: 1 1 auto;
+      min-width: 0;
   }
 }
 
 @media (max-width: 768px) {
   .box {
-      flex: 0 0 25%; /* Adjust width for smaller screens */
-      max-width: 25%;
+      flex: 1 1 auto;
+      min-width: 0;
   }
 
   .dock {
@@ -227,7 +229,7 @@ input[type="checkbox"]:checked + .slider:before {
 
 @media (max-width: 480px) {
   .box {
-      flex: 0 0 30%; /* Adjust width for very small screens */
-      max-width: 30%;
+      flex: 1 1 auto;
+      min-width: 0;
   }
 }
