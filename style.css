@@ -235,3 +235,40 @@ input[type="checkbox"]:checked + .slider:before {
   cursor: pointer;
   text-align: center;
 }
+
+@media (max-width: 768px) {
+  .dock {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .box {
+      flex: 1 1 100%;
+      margin: 5px;
+  }
+
+  .cv-controls {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+  }
+
+  .cv-content {
+      padding: 10px;
+  }
+
+  .cv-slider {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .slide {
+      width: 100%;
+      height: auto;
+  }
+}

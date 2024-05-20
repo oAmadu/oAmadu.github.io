@@ -1,9 +1,17 @@
+// Dark mode button
 const darkModeToggle = document.getElementById('darkModeToggle');
+
+darkModeToggle.addEventListener('change', () => {
+  body.classList.toggle('dark-mode');
+});
+
+
 const body = document.body;
 const cvShowcase = document.querySelector('.cv-showcase');
 const cvContent = document.querySelector('.cv-content');
 const boxes = document.querySelectorAll('.box');
 
+// Every box with it's shown data
 const CV_CONTENT = {
   0: `I am an enthusiastic and adaptable computer engineering fresh graduate...`,
   1: () => window.location.href = 'mailto:aymt7mi@gmail.com',
@@ -13,9 +21,6 @@ const CV_CONTENT = {
   5: () => window.open('https://www.linkedin.com/in/aymt7mi/')
 };
 
-darkModeToggle.addEventListener('change', () => {
-  body.classList.toggle('dark-mode');
-});
 
 boxes.forEach((box, index) => {
   box.addEventListener('click', () => {
@@ -28,7 +33,7 @@ boxes.forEach((box, index) => {
     }
   });
 });
-
+/*/
 const slides = document.querySelectorAll('.slide');
 let currentSlide = 0;
 
@@ -58,3 +63,4 @@ document.getElementById('downloadPdf').addEventListener('click', () => {
 
 // Initialize first slide
 showSlide(currentSlide);
+/*/
