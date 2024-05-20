@@ -6,7 +6,7 @@ const boxes = document.querySelectorAll('.box');
 const CV_CONTENT = {
   0: `I am an enthusiastic and adaptable computer engineering fresh graduate...`,
   1: () => window.location.href = 'mailto:aymt7mi@gmail.com',
-  2: `Phone: +966538024619\nOther contact info`,
+  2: () => window.open("tel:+966538024619"),
   3: () => window.location.href = 'media/cvs/CV1.pdf',
   4: () => window.open('https://github.com/oAmadu'),
   5: () => window.open('https://www.linkedin.com/in/aymt7mi/'),

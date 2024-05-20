@@ -1,0 +1,156 @@
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* Profile Page Styles */
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 50px;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+    min-height: 100vh;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.profile-picture-container {
+    margin-bottom: 20px;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    animation: fadeInImage 2s forwards;
+}
+
+@keyframes fadeInImage {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.language-switcher {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-label {
+    position: absolute;
+    font-size: 0.75em;
+    font-weight: bold;
+    color: #000;
+    transition: .4s;
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    top: 4px;
+    left: 4px;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+input:checked + .slider .slider-label {
+    transform: translateX(26px);
+}
+
+.language-label {
+    margin-top: 8px;
+    font-size: 1em;
+}
+
+.profile-text {
+    font-size: 1.2em;
+    max-width: 600px;
+    text-align: center;
+    animation: fadeInText 2s forwards;
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.back-button-container {
+    margin-top: 20px;
+    animation: fadeInButton 2s forwards;
+}
+
+@keyframes fadeInButton {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.back-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.home-icon {
+    width: 50px;
+    height: 50px;
+}
