@@ -2,15 +2,15 @@
   box-sizing: border-box;
 }
 
-body {
+body, html {
   margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  padding-top: 50px;
-  background-color: #f8f8f8;
-  transition: background-color 0.3s ease;
 }
 
 .dock {
@@ -30,33 +30,12 @@ body {
   background-color: rgba(235, 234, 234, 1); /* Increase opacity on hover */
 }
 
-.container {
-  padding: 20px;
-  border: 1px hidden rgb(253, 0, 0);
-  width: max-content;
-  display: flex;
-}
-
-.box {
-  --size: 60px;
-  width: var(--size);
-  height: var(--size);
-  transition: transform 200ms;
-  padding: 10px;
-  justify-content: center;
-  align-items: center;
-}
-
-.item {
-  width: 100%;
-  height: 100%;
-}
-
 .dock .container {
   display: flex;
   justify-content: center;
   gap: 15px;
 }
+
 .dock .item {
   display: flex;
   flex-direction: column;
@@ -71,36 +50,41 @@ body {
 }
 
 .dock .item .icon-name {
-  margin-top: 5px; 
+  margin-top: 5px;
   font-family: cursive;
 }
 
-
-
-.box:nth-child(1) .item {
-  background-color: transparent;
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Adjust spacing between items */
+  flex-wrap: nowrap; /* Prevent wrapping */
 }
 
-.box:nth-child(2) .item {
-  background-color: transparent;
+.box {
+  flex: 0 0 14%; /* Default width for larger screens */
+  max-width: 14%;
+  box-sizing: border-box;
+  text-align: center;
+  transition: all 0.3s ease; /* Smooth transition */
 }
 
-.box:nth-child(3) .item {
-  background-color: transparent;
+.box img {
+  width: 100%;
+  height: auto;
 }
 
-.box:nth-child(4) .item {
-  background-color: transparent;
+.item {
+  width: 100%;
+  height: 100%;
 }
 
-.box:nth-child(5) .item {
-  background-color: transparent;
-}
-
-.box:nth-child(6) .item {
-  background-color: transparent;
-}
-
+.box:nth-child(1) .item,
+.box:nth-child(2) .item,
+.box:nth-child(3) .item,
+.box:nth-child(4) .item,
+.box:nth-child(5) .item,
+.box:nth-child(6) .item,
 .box:nth-child(7) .item {
   background-color: transparent;
 }
@@ -115,40 +99,47 @@ body {
 }
 
 .cv-showcase {
-  margin-top: 50px;
+  display: none; /* Initially hidden */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cv-slider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.cv-slider img {
+  max-width: 100%;
+  height: auto;
+}
+
+.slide {
   display: none;
-  text-align: center;
-  
+  width: 100%;
 }
 
-.cv-showcase p {
-  font-weight: bold;
-  width:fit-content;
+.cv-slider .slide:first-child {
+  display: block;
 }
 
-.cv-content {
+.cv-controls, .cv-content {
   margin-top: 20px;
-  padding: 10px;
-  border: 1px transparent;
 }
 
-.dark-mode {
-  background-color: #1f1f1f; /* Set the background color for dark mode */
-  color: #f4f4f4; /* Set the text color for dark mode */
-  .dock{ background-color: #5c5c5c;}
-}
-
-
-
-.switch-container {
-  display: inline-block;
-}
-
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
+#downloadPdf {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+  text-align: center;
 }
 
 .switch input[type="checkbox"] {
@@ -202,73 +193,41 @@ input[type="checkbox"]:checked + .slider:before {
   margin-top: 8px;
 }
 
-.cv-slider {
-  position: relative;
-  width: 100%;
-  max-width: 600px;
-  margin: auto;
-  overflow: hidden;
-}
-
-.slide {
-  display: none;
-  width: 100%;
-}
-
-.cv-slider .slide:first-child {
-  display: block;
-}
-
 .cv-controls {
   display: flex;
   justify-content: space-between;
-  margin-top: 10px;
+  width: 100%;
 }
 
-#downloadPdf {
-  display: block;
-  margin: 20px auto;
-  padding: 10px 20px;
-  background-color: #007BFF;
-  color: white;
-  border: none;
-  cursor: pointer;
-  text-align: center;
+.cv-content {
+  padding: 10px;
+}
+
+@media (max-width: 1024px) {
+  .box {
+      flex: 0 0 20%; /* Adjust width for medium screens */
+      max-width: 20%;
+  }
 }
 
 @media (max-width: 768px) {
+  .box {
+      flex: 0 0 25%; /* Adjust width for smaller screens */
+      max-width: 25%;
+  }
+
   .dock {
-      flex-direction: column;
-      align-items: center;
+      flex-direction: row;
   }
 
   .container {
-      flex-direction: column;
-      align-items: center;
+      flex-direction: row;
   }
+}
 
+@media (max-width: 480px) {
   .box {
-      flex: 1 1 100%;
-      margin: 5px;
-  }
-
-  .cv-controls {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-  }
-
-  .cv-content {
-      padding: 10px;
-  }
-
-  .cv-slider {
-      flex-direction: column;
-      align-items: center;
-  }
-
-  .slide {
-      width: 100%;
-      height: auto;
+      flex: 0 0 30%; /* Adjust width for very small screens */
+      max-width: 30%;
   }
 }
