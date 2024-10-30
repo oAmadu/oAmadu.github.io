@@ -1,59 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Aymt7mi's online portfolio showcasing skills and projects.">
-  <title>Aymt7mi</title>
-  <link rel="stylesheet" href="style.css"> 
-</head>
-<body class="dark-mode">
-  
-  <div class="container">
-    <div class="box" onclick="window.location.href='redirect/profile/profile.html'">
-      <div class="item">
-        <img src="media/svg/me.svg" alt="me">
-        <span class="icon-name">Profile</span>
-      </div>
-    </div>
-    <div class="box" onclick="window.location.href='mailto:aymt7mi@gmail.com'">
-      <div class="item">
-        <img src="media/svg/gmail.svg" alt="Gmail">
-        <span class="icon-name">Gmail</span>
-      </div>
-    </div>
-    <div class="box" onclick="window.location.href='redirect/contact/contact.html'">
-      <div class="item">
-          <img src="media/svg/contacts.svg" alt="contacts">
-          <span class="icon-name">Contacts</span>
-      </div>
-  </div>
-    <div class="box" onclick="window.location.href='media/cvs/CV1.pdf'">
-      <div class="item">
-        <img src="media/svg/doc.svg" alt="doc">
-        <span class="icon-name">CV</span>
-      </div>
-    </div>
-    <div class="box" onclick="window.open('https://github.com/oAmadu')">
-      <div class="item">
-        <img src="media/svg/github.svg" alt="github">
-        <span class="icon-name">Github</span>
-      </div>
-    </div>
-    <div class="box" onclick="window.open('https://www.linkedin.com/in/aymt7mi/')">
-      <div class="item">
-        <img src="media/svg/linkedin.svg" alt="linkedin">
-        <span class="icon-name">LinkedIn</span>
-      </div>
-    </div><!--
-    <div class="box" onclick="window.location.href='about.html'">
-      <div class="item">
-        <img src="media/svg/about.svg" alt="about">
-        <span class="icon-name">About</span>
-      </div>-->
-    </div>
-  </div>
+    <meta charset="UTF-8">
+    <title>Ahmed Yahya Almathami | Portfolio</title>
+    <!-- Meta Tags for SEO -->
+    <meta name="description" content="Portfolio of Ahmed Yahya Almathami, a Computer Engineer specializing in Software Development, IoT, AI, and Networking.">
+    <meta name="keywords" content="Ahmed Almathami, Computer Engineer, Software Development, IoT, Artificial Intelligence, Networking">
+    <meta name="author" content="Ahmed Yahya Almathami">
+    <!-- Responsive Design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Lightbox2 CSS -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
 
-  <script src="script.js"></script> 
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-spy="scroll" data-target="#navbar" data-offset="70">
+
+    <!-- Navigation Menu 
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-light fixed-top">
+        <a class="navbar-brand" href="#">Ahmed Almathami</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        Navigation Links 
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#header">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about-me">About Me</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects">Projects</a>
+                </li> 
+                <li class="nav-item">
+                    <a class="nav-link" href="#certifications">Certifications</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#skills">Skills</a>
+                </li> 
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav> -->
+
+    <!-- Header Section -->
+    <header id="header" class="vh-100 d-flex align-items-center">
+        <div class="container text-center">
+            <h1>Ahmed Yahya Almathami</h1>
+            <h3>Computer Engineer</h3>
+            <p>Software Development | IoT | Artificial Intelligence | Networking</p>
+            <!-- Social Media Icons -->
+                <div class="social-icons">
+                    <a href="mailto:mathami.ahmad@gmail.com">
+                    <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/aymt7mi" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/oAmadu" target="_blank">
+                    <i class="fab fa-github"></i>
+                    </a>
+                </div>
+  
+        </div>
+    </header>
+
+    <!-- About Me Section -->
+    <section id="about-me" class="py-5">
+        <div class="container">
+            <h2 class="text-center">About Me</h2>
+            <p class="lead text-center">
+                I am a motivated Computer Engineering graduate with a strong foundation in Software Development, IoT, Artificial Intelligence, and Networking. Skilled in designing efficient hardware-software solutions and eager to contribute to innovative projects while growing professionally.
+            </p>
+        </div>
+    </section>
+
+    <!-- Projects Section 
+    <section id="projects" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center">Projects</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <img src="images/glove-project.jpg" class="img-fluid project-img" alt="Gloves Controlled Artificial Hand">
+                </div>
+                <div class="col-md-6">
+                    <h3>Gloves Controlled Artificial Hand</h3>
+                    <p>
+                        Developed a glove-based device capable of detecting and replicating the user's hand movements in an artificial hand.
+                    </p>
+                    <p>
+                        This project allows users to keep their hands safe while completing work from a distance by integrating wireless communication technology for remote control.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>-->
+
+<!-- Certificates Section -->
+<section id="certifications" class="py-5">
+    <div class="container">
+      <h2 class="text-center">Certifications & Courses</h2>
+      <div id="certCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#certCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#certCarousel" data-slide-to="1"></li>
+          <li data-target="#certCarousel" data-slide-to="2"></li>
+          <li data-target="#certCarousel" data-slide-to="3"></li>
+          <!-- Add one for each certificate -->
+        </ol>
+  
+        <!-- Controls -->
+        <a class="carousel-control-prev" href="#certCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#certCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+  
+        <!-- Carousel Items -->
+        <div class="carousel-inner">
+          <!-- Certificate 1 -->
+          <div class="carousel-item active">
+            <div class="row align-items-center">
+              <div class="col-md-6">
+                <a href="certificates/hcia-ai.jpg" data-lightbox="certificates" data-title="HCIA-AI V3.5 Course">
+                  <img src="certificates/hcia-ai.jpg" class="img-fluid cert-img" alt="HCIA-AI V3.5 Course">
+                </a>
+              </div>
+              <div class="col-md-6">
+                <h4>HCIA-AI V3.5 Course</h4>
+                <p><strong>Huawei | Sep 2024</strong></p>
+                <p>Completed a comprehensive course on Artificial Intelligence, covering machine learning algorithms, neural networks, and AI applications.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Certificate 2 -->
+          <div class="carousel-item">
+            <div class="row align-items-center">
+              <div class="col-md-6">
+                <a href="certificates/hcia-datacom.jpg" data-lightbox="certificates" data-title="HCIA-Datacom V1.0 Course">
+                  <img src="certificates/hcia-datacom.jpg" class="img-fluid cert-img" alt="HCIA-Datacom V1.0 Course">
+                </a>
+              </div>
+              <div class="col-md-6">
+                <h4>HCIA-Datacom V1.0 Course</h4>
+                <p><strong>Huawei | Sep 2024</strong></p>
+                <p>Gained knowledge in data communication technologies, networking principles, and practical skills for configuring network devices.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Certificate 3 -->
+          <div class="carousel-item">
+            <div class="row align-items-center">
+              <div class="col-md-6">
+                <a href="certificates/ibm-da.jpg" data-lightbox="certificates" data-title="Project Based Learning Programme in Data Analysis">
+                  <img src="certificates/ibm-da.jpg" class="img-fluid cert-img" alt="Project Based Learning Programme in Data Analysis">
+                </a>
+              </div>
+              <div class="col-md-6">
+                <h4>Project Based Learning Programme in Data Analysis</h4>
+                <p><strong>IBM SkillsBuild | Oct 2024</strong></p>
+                <p>Engaged in hands-on projects to analyze data sets, visualize data, and derive actionable insights using various analytical tools.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Certificate 4 -->
+          <div class="carousel-item">
+            <div class="row align-items-center">
+              <div class="col-md-6">
+                <a href="certificates/ibm-df.jpg" data-lightbox="certificates" data-title="Data Fundamentals">
+                  <img src="certificates/ibm-df.jpg" class="img-fluid cert-img" alt="Data Fundamentals">
+                </a>
+              </div>
+              <div class="col-md-6">
+                <h4>Data Fundamentals</h4>
+                <p><strong>IBM SkillsBuild | Oct 2024</strong></p>
+                <p>Learned the basics of data science, data management, and data-driven decision-making processes.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Add more certificates as needed -->
+        </div>
+      </div>
+    </div>
+  </section>  
+  
+
+
+    <!-- Skills Section 
+    <section id="skills" class="py-5">
+        <div class="container">
+            <h2 class="text-center">Skills</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Technical Skills</h4>
+                    <ul>
+                        <li>Programming Languages: C++, Python, Java, Dart</li>
+                        <li>Artificial Intelligence</li>
+                        <li>Machine Learning</li>
+                        <li>Robotics Software</li>
+                        <li>Web Development</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h4>Soft Skills</h4>
+                    <ul>
+                        <li>Collaboration</li>
+                        <li>Adaptability</li>
+                        <li>Communication</li>
+                        <li>Problem-solving</li>
+                        <li>Time Management</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+-->
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container text-center">
+            <h2>Contact Me</h2>
+            <p>Feel free to reach out through any of the platforms below.</p>
+            <p><strong>Email:</strong> <a href="mailto:mathami.ahmad@gmail.com">mathami.ahmad@gmail.com</a></p>
+            <p><strong>Phone:</strong> +966 53 802 4619</p>
+            <!-- Social Media Icons -->
+            <div class="social-icons">
+                <a href="mailto:mathami.ahmad@gmail.com">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/yourusername" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-4">
+        © 2024 Ahmed Yahya Almathami
+    </footer>
+
+    <!-- jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    ></script>
+
+    <!-- Custom JS -->
+    <script>
+        // Navbar background change on scroll
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                if ($(window).scrollTop() > 50) {
+                    $('.navbar').addClass('scrolled');
+                } else {
+                    $('.navbar').removeClass('scrolled');
+                }
+            });
+
+            // Smooth scrolling
+            $('a.nav-link').on('click', function(event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top - 70
+                    }, 800);
+                }
+            });
+        });
+    </script>
+    <!-- jQuery (Required by Lightbox2) -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<!-- Lightbox2 JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
 </body>
 </html>
