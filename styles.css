@@ -1,16 +1,18 @@
-/* Define custom colors */
 :root {
-    --primary-color: #0d6efd;
-    --secondary-color: #6c757d;
-    --background-color: #f8f9fa;
-    --text-color: #343a40;
-  }
+  --primary-color: #2563eb;    /* Modern blue */
+  --secondary-color: #64748b;  /* Slate gray */
+  --background-color: #0f172a; /* Dark blue background */
+  --text-color: #e2e8f0;      /* Light gray text */
+  --accent-color: #38bdf8;    /* Light blue accent */
+  --hover-color: #60a5fa;     /* Hover state blue */
+}
   
   /* Body and Font */
   body {
     font-family: 'Montserrat', sans-serif;
     color: var(--text-color);
-    background: linear-gradient(135deg, #1f1c2c 0%, #928dab 100%);
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    line-height: 1.6;
   }
   
   
@@ -21,21 +23,33 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Navbar Styles */
 .navbar {
-    transition: background-color 0.5s;
-}
-
-.navbar.scrolled {
-    background-color: rgba(255, 255, 255, 0.9);
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1rem 2rem;
 }
 
 .navbar-light .navbar-nav .nav-link {
     color: var(--text-color);
-    margin-right: 15px;
-    
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 1rem;
 }
 
-.navbar-light .navbar-nav .nav-link:hover {
-    color: var(--primary-color);
+.navbar-light .navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.navbar-light .navbar-nav .nav-link:hover::after {
+    width: 100%;
 }
 
 .navbar-brand {
@@ -49,9 +63,11 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Header Styles */
 #header {
-    background: url('images/background-image.jpg') no-repeat center center/cover;
-    color: var(--primary-color);
-    position: relative;
+  background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)),
+              url('images/background-image.jpg') no-repeat center center/cover;
+  color: var(--text-color);
+  position: relative;
+  padding: 8rem 0;
 }
 
 #header::before {
@@ -70,13 +86,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #header h1 {
-    font-size: 4rem;
-    margin-bottom: 0.5rem;
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, var(--accent-color), var(--primary-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 #header h3 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+  font-size: 1.8rem;
+  color: var(--secondary-color);
+  margin-bottom: 1.5rem;
 }
 
 #header p {
@@ -87,18 +109,29 @@ h1, h2, h3, h4, h5, h6 {
     height: 100vh;
 }
 
+.social-icons {
+  margin-top: 2rem;
+}
+
 .social-icons a {
-    display: inline-block;
-    margin: 0 25px;
-    color: var(--text-color);
-    font-size: 1.5rem;
-    transition: color 0.3s, transform 0.3s;
-  }
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  margin: 0 15px;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
   
-  .social-icons a:hover {
-    color: var(--primary-color);
-    transform: scale(2.1);
-  }
+.social-icons a:hover {
+  color: var(--accent-color);
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.15);
+}
   
 
 .social-icons img {
@@ -135,50 +168,65 @@ section h2 {
 
 /* Certifications Section */
 #certifications .carousel-item {
-    transition: transform 0.8s ease-in-out;
-    padding: 2rem 0;
-  }
-  
-  .cert-img {
+    transition: transform 0.6s ease-in-out;
+}
+
+.carousel-item-next:not(.carousel-item-start),
+.active.carousel-item-end {
+    transform: translateX(100%);
+}
+
+.carousel-item-prev:not(.carousel-item-end),
+.active.carousel-item-start {
+    transform: translateX(-100%);
+}
+
+.carousel-item-next,
+.carousel-item-prev,
+.carousel-item.active {
+    display: flex;
+}
+
+.cert-img {
     width: 100%;
-    max-height: 300px;
+    max-width: 800px;
+    height: 400px;
     object-fit: contain;
-    filter: brightness(0.7) contrast(1.2);
-    transition: filter 0.3s;
-  }
-  
-  .cert-img:hover {
-    filter: brightness(0.9) contrast(1.1);
-  }
-  
-  #certifications h4 {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    padding: 1rem;
+}
+
+#certifications h4 {
     color: #007BFF;
     margin-bottom: 0.5rem;
-  }
-  
-  #certifications p {
+}
+
+#certifications p {
     color: #e6dfdf;
-  }
-  
-  #certifications .carousel-control-prev-icon,
-  #certifications .carousel-control-next-icon {
+}
+
+#certifications .carousel-control-prev-icon,
+#certifications .carousel-control-next-icon {
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 50%;
-  }
-  
-  #certifications .carousel-control-prev,
-  #certifications .carousel-control-next {
+}
+
+#certifications .carousel-control-prev,
+#certifications .carousel-control-next {
     width: 5%;
-  }
-  
-  @media (max-width: 767px) {
+}
+
+@media (max-width: 767px) {
     #certifications .row {
       flex-direction: column;
     }
     .cert-img {
       margin-bottom: 1rem;
     }
-  }
+}
   
 
 
@@ -203,51 +251,24 @@ section h2 {
 
 /* Contact Section Styles */
 #contact {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
     padding: 5rem 0;
-    color: #fff;
-    position: relative;
-    background: linear-gradient(135deg, #1f1c2c 0%, #928dab 100%);
-  }
-  
-  #contact::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(31, 28, 44, 0.9); /* Adjust opacity as needed */
-    z-index: 1;
-  }
-  
-  #contact .container {
-    position: relative;
-    z-index: 2;
-  }
-  
-  #contact h2 {
-    color: #fff;
-    margin-bottom: 2rem;
+}
+
+#contact h2 {
+    color: var(--accent-color);
     font-size: 2.5rem;
-  }
-  @media (max-width: 768px) {
-    #contact h2 {
-      font-size: 2rem;
-    }
-  }
-  
-  #contact p {
-    color: #ddd;
-  }
-  
-  #contact a {
-    color: #83a6db; /* Use your primary color */
+    margin-bottom: 2rem;
+}
+
+#contact a {
+    color: var(--accent-color);
+    transition: color 0.3s ease;
+}
+
+#contact a:hover {
+    color: var(--hover-color);
     text-decoration: none;
-  }
-  
-  #contact a:hover {
-    color: #66b2ff; /* Slightly lighter shade for hover effect */
-    text-decoration: underline;
 }
   
   #contact .social-icons a {
@@ -278,4 +299,88 @@ footer {
     #header h3 {
         font-size: 1.5rem;
     }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#header h1 {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+#header h3 {
+    animation: fadeInUp 0.8s ease-out 0.2s forwards;
+    opacity: 0;
+}
+
+#header p {
+    animation: fadeInUp 0.8s ease-out 0.4s forwards;
+    opacity: 0;
+}
+
+.social-icons {
+    animation: fadeInUp 0.8s ease-out 0.6s forwards;
+    opacity: 0;
+}
+
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(to right, var(--accent-color), var(--primary-color));
+    z-index: 9999;
+    width: 0;
+    transition: width 0.2s ease;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+}
+
+#scroll-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--primary-color);
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.3s ease;
+    transform: translateY(100px);
+}
+
+#scroll-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#scroll-top:hover {
+    background: var(--hover-color);
+    transform: translateY(-3px);
 }
